@@ -137,4 +137,4 @@ Confirm you are unlinked before committing: `git status` in the consumer must sh
 
 ## Releasing
 
-See [release.md](release.md). In short: this repository releases by git tag only and publishes to no registry.
+See [release.md](release.md). In short: this repository releases by git tag only and publishes to no registry, and a release is not complete until `sbx-api` and `sbx-web` both pin the new tag with green CI.
