@@ -5,7 +5,7 @@ export function validateBookmark(input) {
   const { title, url, tags = [] } = input ?? {};
   if (typeof title !== 'string' || title.trim().length === 0) errors.push('title is required');
   else if (title.length > 200) errors.push('title is longer than 200 characters');
-  if (typeof url !== 'string' || !/^https?:\/\/\S+$/i.test(url)) errors.push('url must start with http:// or https://');
+  if (typeof url !== 'string' || !/^https?:\/\/\S+$/i.test(url) || !URL.canParse(url)) errors.push('url must start with http:// or https://');
   if (!Array.isArray(tags)) errors.push('tags must be a list');
   else {
     if (tags.length > 10) errors.push('at most 10 tags');

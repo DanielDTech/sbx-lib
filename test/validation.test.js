@@ -24,3 +24,8 @@ test('more than ten tags is refused', () => {
 test('a missing body is invalid, not an exception', () => {
   assert.equal(validateBookmark(null).ok, false);
 });
+
+test('a url with a scheme that the URL parser still rejects is invalid', () => {
+  assert.equal(validateBookmark({ title: 'a', url: 'http://a:99999' }).ok, false);
+  assert.equal(validateBookmark({ title: 'a', url: 'http://[x' }).ok, false);
+});
