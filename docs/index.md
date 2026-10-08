@@ -34,6 +34,7 @@ The two modules are one area of ownership, not two. They are small, they change 
 | `title` | Required, non-blank, at most 200 characters |
 | `url` | Must match `http(s)://…` and be parseable by `URL.canParse` |
 | `tags` | A list, at most 10 entries, each matching `/^[a-z0-9-]{1,30}$/` |
+| `note` | Optional. When present it must be a string of at most 500 characters, counted as given with no trimming |
 
 ### formatting
 
